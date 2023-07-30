@@ -1,1 +1,1 @@
-https://szkonieczny.github.io/goit-markup-hw-08/
+https://szkonieczny.github.io/goit-js-hw-06/

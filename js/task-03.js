@@ -17,7 +17,7 @@ const images = [
 function createImageHTML(image) {
   return `
     <li>
-      <img src="${image.url}" alt="${image.alt}">
+      <img src="${image.url}" alt="${image.alt}" style="width: 100%; margin: 0;">
     </li>
   `;
 }
@@ -31,4 +31,20 @@ const galleryHTML = images.map(createImageHTML).join("");
 // Wstawiny cały kod HTML galerii do listy ul jednocześnie
 ulGallery.insertAdjacentHTML("beforeend", galleryHTML);
 
-console.log(ulGallery);
+galleryContainer.style.overflowX = "hidden";
+
+// console.log(ulGallery);
+
+// const gallery = document.querySelector(".gallery");
+
+// const imagesHTML = images
+//   .map(
+//     (image) => `
+//       <li class="gallery__item">
+//         <img class="gallery__image" src="${image.url}" alt="${image.alt}" />
+//       </li>
+//     `
+//   )
+//   .join("");
+
+// gallery.insertAdjacentHTML("beforeend", imagesHTML);

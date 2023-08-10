@@ -7,21 +7,33 @@ const ingredients = [
   "Condiments",
 ];
 
-// Funkcja tworząca i dodająca <li> do listy <ul>
-function createAndAppendLiElement(text) {
-  const li = document.createElement("li");
-  li.textContent = text;
-  li.classList.add("item");
-  return li;
-}
+// // Funkcja tworząca i dodająca <li> do listy <ul>
+// function createAndAppendLiElement(text) {
+//   const li = document.createElement("li");
+//   li.textContent = text;
+//   li.classList.add("item");
+//   return li;
+// }
 
-// Pobieranie referencję do listy ul po ID
+// // Pobieranie referencję do listy ul po ID
+// const ulElement = document.getElementById("ingredients");
+
+// // Tworzenie i dodawanie <li> do listy <ul> za pomocą pętli for
+// for (const ingredient of ingredients) {
+//   const liElement = createAndAppendLiElement(ingredient);
+//   ulElement.appendChild(liElement);
+// }
+
+// console.log(ulElement);
+
 const ulElement = document.getElementById("ingredients");
+const liItems = [];
 
-// Tworzenie i dodawanie <li> do listy <ul> za pomocą pętli for
-for (const ingredient of ingredients) {
-  const liElement = createAndAppendLiElement(ingredient);
-  ulElement.appendChild(liElement);
-}
+ingredients.forEach((ingredient) => {
+  const li = document.createElement("li");
+  li.textContent = ingredient;
+  li.classList.add("item");
+  liItems.push(li);
+});
 
-console.log(ulElement);
+ulElement.append(...liItems);
